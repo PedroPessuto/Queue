@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
+    
+    @Query var accounts: [Account]
+    @Environment(\.modelContext) var context
     
     // ========== Variables ==========
     @Environment(GeneralController.self) private var controller
@@ -16,7 +20,7 @@ struct HomeView: View {
     
     @State private var showingAlert: Bool = false
     @State private var alertText: String = ""
-        
+    
     // ========== Body ==========
     var body: some View {
         
@@ -58,6 +62,14 @@ struct HomeView: View {
         }
         .alert(alertText, isPresented: $showingAlert) {
             Button("OK", role: .cancel) { alertText = "" }
+        }
+        .toolbar{
+            ToolbarItem(placement: .confirmationAction){
+                if let account = accounts.first {
+                    NavigationLink(account.name,
+                                   destination: AccountView(account: account))
+                }
+            }
         }
         
         

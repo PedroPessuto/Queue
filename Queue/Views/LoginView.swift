@@ -6,8 +6,11 @@
 //C
 
 import SwiftUI
+import SwiftData
 
 struct LoginView: View {
+    
+    @Environment(\.modelContext) var context
     
     // ========== Variables ==========
     @Environment(GeneralController.self) private var controller
@@ -17,7 +20,7 @@ struct LoginView: View {
     
     private func createAccount() -> Void {
         if (personName.count > 0) {
-//            controller.accountController.createAccount(personName)
+            saveAccount()
         }
     }
     
@@ -44,6 +47,12 @@ struct LoginView: View {
             Color("oLightGreen")
         )
         
+    }
+    
+    func saveAccount(){
+        let account = Account(name: personName)
+        context.insert(account)
+        controller.accountController.createAccount(account)
     }
 }
 

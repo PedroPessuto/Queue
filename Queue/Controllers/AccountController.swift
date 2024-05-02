@@ -14,5 +14,8 @@ import Foundation
     public var account: Account? = nil
     
     // ========== Functions ==========
+    public func createAccount(_ account: Account) {
+        self.account = account
+    }
 }
 

@@ -10,12 +10,21 @@ import SwiftData
 
 struct ContentView: View {
     
+    @Query var account: [Account]
+    
     @State var controller: GeneralController = GeneralController()
+    
+    init(){
+        if !account.isEmpty {
+            controller.accountController.createAccount(account.first!)
+        }
+    }
     
     var body: some View {
         
         NavigationStack {
-            if (controller.accountController.account != nil) {
+            
+            if account.isEmpty {
                 HomeView()
             }
             else {
@@ -23,6 +32,7 @@ struct ContentView: View {
             }
         }
         .environment(controller)
+        
         
     }
 }

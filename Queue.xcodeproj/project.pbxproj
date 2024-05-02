@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B43E61342BE40A5800847F80 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43E61332BE40A5800847F80 /* AccountView.swift */; };
 		BF1551092BE3F6E500AEDBBF /* QueueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1551082BE3F6E500AEDBBF /* QueueApp.swift */; };
 		BF15510B2BE3F6E500AEDBBF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15510A2BE3F6E500AEDBBF /* ContentView.swift */; };
 		BF15510D2BE3F6E500AEDBBF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15510C2BE3F6E500AEDBBF /* Item.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B43E61332BE40A5800847F80 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BF1551052BE3F6E500AEDBBF /* Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1551082BE3F6E500AEDBBF /* QueueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueApp.swift; sourceTree = "<group>"; };
 		BF15510A2BE3F6E500AEDBBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,7 +92,6 @@
 				BF15511B2BE3F70200AEDBBF /* Models */,
 				BF15511A2BE3F6FB00AEDBBF /* Controllers */,
 				BF1551192BE3F6F600AEDBBF /* Views */,
-				BF1551182BE3F6F000AEDBBF /* Enums */,
 				BF1551082BE3F6E500AEDBBF /* QueueApp.swift */,
 				BF15510A2BE3F6E500AEDBBF /* ContentView.swift */,
 				BF15510C2BE3F6E500AEDBBF /* Item.swift */,
@@ -108,13 +109,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BF1551182BE3F6F000AEDBBF /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
 		BF1551192BE3F6F600AEDBBF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +116,7 @@
 				BF1551232BE3F76200AEDBBF /* Components */,
 				BF1551212BE3F74E00AEDBBF /* LoginView.swift */,
 				BF15513B2BE3F79B00AEDBBF /* HomeView.swift */,
+				B43E61332BE40A5800847F80 /* AccountView.swift */,
 				BF15513C2BE3F79B00AEDBBF /* QueueView.swift */,
 			);
 			path = Views;
@@ -265,6 +260,7 @@
 				BF1551352BE3F77A00AEDBBF /* Title.swift in Sources */,
 				BF1551092BE3F6E500AEDBBF /* QueueApp.swift in Sources */,
 				BF15511E2BE3F70F00AEDBBF /* Queue.swift in Sources */,
+				B43E61342BE40A5800847F80 /* AccountView.swift in Sources */,
 				BF15513E2BE3F79B00AEDBBF /* QueueView.swift in Sources */,
 				BF1551322BE3F77A00AEDBBF /* BigTitle.swift in Sources */,
 			);
@@ -400,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Queue/Preview Content\"";
-				DEVELOPMENT_TEAM = AV2QX4598Q;
+				DEVELOPMENT_TEAM = 7FZ4ZHZT5J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -408,6 +404,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,7 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Queue/Preview Content\"";
-				DEVELOPMENT_TEAM = AV2QX4598Q;
+				DEVELOPMENT_TEAM = 7FZ4ZHZT5J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -437,6 +434,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

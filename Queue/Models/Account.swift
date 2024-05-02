@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class Account {
     
     // ========== Atributtes ==========

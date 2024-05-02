@@ -11,10 +11,9 @@ import SwiftData
 struct ContentView: View {
     
     @Query var account: [Account]
-    
     @State var controller: GeneralController = GeneralController()
     
-    init(){
+    private func setup(){
         if !account.isEmpty {
             controller.accountController.createAccount(account.first!)
         }
@@ -32,6 +31,9 @@ struct ContentView: View {
             }
         }
         .environment(controller)
+        .onAppear {
+            setup()
+        }
         
         
     }

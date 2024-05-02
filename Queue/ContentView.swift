@@ -24,7 +24,7 @@ struct ContentView: View {
         
         NavigationStack {
             
-            if account.isEmpty {
+            if controller.accountController.account != nil {
                 HomeView()
             }
             else {

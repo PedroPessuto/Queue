@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B43E61342BE40A5800847F80 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43E61332BE40A5800847F80 /* AccountView.swift */; };
+		BA847EC52BE42193009B34BC /* CloudController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA847EC42BE42193009B34BC /* CloudController.swift */; };
+		BA847EC82BE423BF009B34BC /* RecordTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA847EC72BE423BF009B34BC /* RecordTypes.swift */; };
+		BA847ECA2BE42590009B34BC /* QueueFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA847EC92BE42590009B34BC /* QueueFields.swift */; };
 		BF1551092BE3F6E500AEDBBF /* QueueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1551082BE3F6E500AEDBBF /* QueueApp.swift */; };
 		BF15510B2BE3F6E500AEDBBF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15510A2BE3F6E500AEDBBF /* ContentView.swift */; };
 		BF15510D2BE3F6E500AEDBBF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15510C2BE3F6E500AEDBBF /* Item.swift */; };
@@ -34,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		B43E61332BE40A5800847F80 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		BA847EC22BE41F8B009B34BC /* Queue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queue.entitlements; sourceTree = "<group>"; };
+		BA847EC32BE41FEA009B34BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BA847EC42BE42193009B34BC /* CloudController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudController.swift; sourceTree = "<group>"; };
+		BA847EC72BE423BF009B34BC /* RecordTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTypes.swift; sourceTree = "<group>"; };
+		BA847EC92BE42590009B34BC /* QueueFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueFields.swift; sourceTree = "<group>"; };
 		BF1551052BE3F6E500AEDBBF /* Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1551082BE3F6E500AEDBBF /* QueueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueApp.swift; sourceTree = "<group>"; };
 		BF15510A2BE3F6E500AEDBBF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA847EC62BE423A4009B34BC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BA847EC72BE423BF009B34BC /* RecordTypes.swift */,
+				BA847EC92BE42590009B34BC /* QueueFields.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		BF1550FC2BE3F6E500AEDBBF = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +106,9 @@
 		BF1551072BE3F6E500AEDBBF /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				BA847EC62BE423A4009B34BC /* Enums */,
+				BA847EC32BE41FEA009B34BC /* Info.plist */,
+				BA847EC22BE41F8B009B34BC /* Queue.entitlements */,
 				BF15511B2BE3F70200AEDBBF /* Models */,
 				BF15511A2BE3F6FB00AEDBBF /* Controllers */,
 				BF1551192BE3F6F600AEDBBF /* Views */,
@@ -127,6 +147,7 @@
 			children = (
 				BF1551442BE3F89700AEDBBF /* AccountController.swift */,
 				BF1551402BE3F7A500AEDBBF /* GeneralController.swift */,
+				BA847EC42BE42193009B34BC /* CloudController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +274,8 @@
 				BF15514B2BE3F92600AEDBBF /* JoinView.swift in Sources */,
 				BF1551202BE3F72F00AEDBBF /* Person.swift in Sources */,
 				BF15514A2BE3F92600AEDBBF /* CreateView.swift in Sources */,
+				BA847EC52BE42193009B34BC /* CloudController.swift in Sources */,
+				BA847ECA2BE42590009B34BC /* QueueFields.swift in Sources */,
 				BF15510B2BE3F6E500AEDBBF /* ContentView.swift in Sources */,
 				BF1551332BE3F77A00AEDBBF /* MediumTitle.swift in Sources */,
 				BF1551372BE3F77A00AEDBBF /* oButton.swift in Sources */,
@@ -263,6 +286,7 @@
 				B43E61342BE40A5800847F80 /* AccountView.swift in Sources */,
 				BF15513E2BE3F79B00AEDBBF /* QueueView.swift in Sources */,
 				BF1551322BE3F77A00AEDBBF /* BigTitle.swift in Sources */,
+				BA847EC82BE423BF009B34BC /* RecordTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,12 +417,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Queue/Queue.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Queue/Preview Content\"";
-				DEVELOPMENT_TEAM = 7FZ4ZHZT5J;
+				DEVELOPMENT_TEAM = C73FLD543W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Queue/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pedropessuto.Queue;
+				PRODUCT_BUNDLE_IDENTIFIER = amandaconde.Queue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -423,12 +449,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Queue/Queue.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Queue/Preview Content\"";
-				DEVELOPMENT_TEAM = 7FZ4ZHZT5J;
+				DEVELOPMENT_TEAM = C73FLD543W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Queue/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -440,7 +468,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pedropessuto.Queue;
+				PRODUCT_BUNDLE_IDENTIFIER = amandaconde.Queue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

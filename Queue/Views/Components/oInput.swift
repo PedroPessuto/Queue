@@ -16,6 +16,8 @@ struct oInput: View {
     // ========== Body ==========
     var body: some View {
         TextField(text.uppercased(), text: $bind)
+            .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+            .textInputAutocapitalization(.characters)
             .fontWeight(.bold)
             .foregroundStyle(Color("oBrown"))
             .padding()
@@ -23,9 +25,7 @@ struct oInput: View {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundStyle(Color(.white))
             )
-            .onChange(of: bind) { _, newValue in
-                bind = newValue.uppercased()
-            }
+
     }
     
     // ========== Constructors ==========

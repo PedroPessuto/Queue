@@ -20,10 +20,23 @@ struct CreateView: View {
     // ========== Functions ==========
     
     private func create() -> Void {
-        if (name.count > 0) {
-            
+        Task {
+            if (!name.isEmpty) {
+                let response: Queue? =  await controller.createQueue(name)
+                if (response == nil)  {
+                    alertText = "Error: Fail to create a queue"
+                    showingAlert = true
+                }
+                else {
+                    dismiss()
+                }
+               
+            }
+            else {
+                alertText = "Type something"
+                showingAlert = true
+            }
         }
-        
     }
     
     // ========== Body ==========
@@ -40,7 +53,6 @@ struct CreateView: View {
             
             oButton("Create") {
                 create()
-                
             }
             
         }

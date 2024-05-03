@@ -18,7 +18,7 @@ struct AccountView: View {
     
     var body: some View {
         VStack{
-            Text(account.name)
+            Text(account.name ?? "aaa")
             TextField("Edit your name:", text: $newName)
             Button(action: {
                 editModel()

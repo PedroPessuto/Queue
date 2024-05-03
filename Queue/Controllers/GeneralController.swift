@@ -6,17 +6,32 @@
 //
 
 import Foundation
+import CloudKit
 
 @Observable class GeneralController {
     
     // ========== Atributtes ==========
+    private var cloudController: CloudController = CloudController()
     public var accountController: AccountController = AccountController()
     public var queues: [Queue] = []
     
     // ========== Functions ==========
     
+
     // TODO: Criar uma fila
-    public func createQueue(_ name: String) {
+    public func createQueue(_ name: String) async -> Queue? {
+        if let account: Account = accountController.account {
+            let queue: Queue = Queue(name, account.id)
+            if let record: CKRecord = await cloudController.addQueue(queue) {
+                if let newQueue: Queue = Queue(record) {
+                    queues.append(newQueue)
+                    return newQueue
+                }
+                
+            }
+            
+        }
+        return nil
     }
     
     // TODO: Sair de uma fila

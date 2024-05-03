@@ -66,7 +66,7 @@ struct HomeView: View {
         .toolbar{
             ToolbarItem(placement: .confirmationAction){
                 if let account = accounts.first {
-                    NavigationLink(account.name,
+                    NavigationLink(account.name ?? "aaa",
                                    destination: AccountView(account: account))
                 }
             }

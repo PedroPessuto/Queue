@@ -18,7 +18,7 @@ import CloudKit
     // ========== Functions ==========
     
 
-    // TODO: Criar uma fila
+    // MARK: Create a queue
     public func createQueue(_ name: String) async -> Queue? {
         if let account: Account = accountController.account {
             let queue: Queue = Queue(name, account.id)
@@ -34,8 +34,34 @@ import CloudKit
         return nil
     }
     
-    // TODO: Sair de uma fila
-    public func quitQueue(_ queue: Queue) {
+    // MARK: Delete a queue
+    public func quitQueue(_ queue: Queue) async {
+        if let account: Account = accountController.account {
+            if let recordId: CKRecord.ID = await cloudController.deleteQueue(queue) {
+                queues.removeAll { queue in
+                    queue.id == recordId.recordName
+                }
+            }
+        }
+    }
+    
+    // MARK: Read queues
+    public func getQueues() async {
+        if let _: Account = accountController.account {
+            if let records: [CKRecord] = await cloudController.getQueues() {
+                queues = records.compactMap({ record in
+                    return Queue(record)
+                })
+            }
+        }
+    }
+    
+    public func changeQueueName(_ queue: Queue, _ newName: String)  async {
+        if let _ = accountController.account {
+            if let _: CKRecord = await cloudController.changeQueueName(queue, newName) {
+                queue.name = newName
+            }
+        }
     }
     
     // TODO: Entrar em uma fila

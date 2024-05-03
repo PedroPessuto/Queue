@@ -50,7 +50,7 @@ import CloudKit
     }
     
     public func getRecord() -> CKRecord {
-        let record: CKRecord = CKRecord(recordType: RecordTypes.Queue.rawValue)
+        let record: CKRecord = CKRecord(recordType: RecordTypes.Queue.rawValue, recordID: CKRecord.ID(recordName: self.id))
         record.setValue(self.authorId, forKey: QueueFields.authorId.rawValue)
         record.setValue(self.code, forKey: QueueFields.code.rawValue)
         record.setValue(self.name, forKey: QueueFields.name.rawValue)

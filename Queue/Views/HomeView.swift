@@ -52,6 +52,12 @@ struct HomeView: View {
             .frame(maxWidth: .infinity)
         }
         .padding(30)
+        .onAppear {
+            Task {
+                await controller.getQueues()
+            }
+
+        }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         .background( Color("oYellow"))
         .sheet(isPresented: $isCreating) {

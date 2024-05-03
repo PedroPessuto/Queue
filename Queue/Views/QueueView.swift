@@ -25,7 +25,11 @@ struct QueueView: View {
     }
     
     private func quit() -> Void {
-        
+        Task {
+            await controller.quitQueue(queue)
+            dismiss()
+        }
+       
     }
     
     private func next() -> Void {
@@ -39,6 +43,11 @@ struct QueueView: View {
             
             VStack (alignment: .leading) {
                 Title(queue.name)
+                    .onTapGesture {
+                        Task {
+                            await controller.changeQueueName(queue, "Atualizada")
+                        }
+                    }
                 MediumTitle("Code: \(queue.code)")
                 
                 if (controller.accountController.account?.id == queue.authorId && !queue.participants.isEmpty) {
